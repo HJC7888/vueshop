@@ -17,7 +17,7 @@
           <img src="../assets/images/menu2.png" />
           <div>图片分享</div>
         </van-grid-item>
-        <van-grid-item>
+        <van-grid-item to="/goodslist">
           <img src="../assets/images/menu3.png" />
           <div>商品购买</div>
         </van-grid-item>

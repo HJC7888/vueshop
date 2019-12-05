@@ -5,6 +5,8 @@ import cart from '@/components/cart.vue'
 import center from '@/components/center.vue'
 import news from '@/components/news/news.vue'
 import newsdetail from '@/components/news/newsdetail.vue'
+import goodslist from '@/components/goods/goodslist.vue'
+import goodsdetail from '@/components/goods/goodsdetail.vue'
 import { Lazyload, Icon } from 'vant'
 
 Vue.use(Icon)
@@ -17,7 +19,10 @@ const routes = [
   { path: '/cart', component: cart },
   { path: '/center', component: center },
   { path: '/news', component: news },
-  { path: '/newsdetail/:id', component: newsdetail }
+  { path: '/newsdetail/:id', component: newsdetail },
+  { path: '/goodslist', component: goodslist },
+  { path: '/goodsdetail/:id', component: goodsdetail }
+
 ]
 
 const router = new VueRouter({

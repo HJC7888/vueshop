@@ -59,7 +59,8 @@ export default {
       message: "",
       pageindex: 1,
       newsComments: [],
-      loadflag: false
+      loadflag: false,
+      showflag: true
     };
   },
   methods: {
@@ -79,6 +80,10 @@ export default {
       });
     },
     loadMore() {
+      if(!this.showflag){
+        Toast("没有更多评论");
+        return
+      }
       this.loadflag = true;
       ++this.pageindex;
       getNewsComments(this.id, this.pageindex).then(res => {
@@ -87,6 +92,8 @@ export default {
           this.loadflag = false;
           if (res.message.length === 0) {
             Toast("没有更多评论");
+            this.showflag=false
+            return
           }
         }
       });
@@ -100,6 +107,7 @@ export default {
             add_time: new Date(),
             content: this.message
           });
+          this.message=''
         }
       });
     }

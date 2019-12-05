@@ -10,12 +10,15 @@
     />
 
     <!-- 内容 -->
-    <router-view></router-view>
+    <div class="body-con">
+        <router-view></router-view>
+    </div>
+  
 
     <!-- 尾 -->
     <van-tabbar v-model="active" route>
       <van-tabbar-item icon="wap-home-o" to="/home">主页</van-tabbar-item>
-      <van-tabbar-item icon="cart-o" info="7" to="/cart">购物车</van-tabbar-item>
+      <van-tabbar-item icon="cart-o" :info="this.$store.getters.getcartnumber" to="/cart">购物车</van-tabbar-item>
       <van-tabbar-item icon="user-o" to="/center">个人主页</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -61,7 +64,7 @@ export default {
       color: #fff;
     }
   }
-  .body {
+  .body-con {
     margin-top: 47px;
     margin-bottom: 50px;
   }

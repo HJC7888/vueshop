@@ -4,6 +4,7 @@ import router from './router'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import moment from 'moment'
+import store from './store/cartstore.js'
 
 Vue.use(Vant)
 Vue.use(moment)
@@ -14,5 +15,6 @@ Vue.filter('dataFormat', function (data) {
 })
 new Vue({
   router,
+  store: store,
   render: h => h(App)
 }).$mount('#app')

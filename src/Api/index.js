@@ -27,3 +27,23 @@ export const sendNewsComments = async function (id, content) {
   const result = await axios.post('/postcomment/' + id, params)
   return result.data
 }
+
+export const getgoods = async function (pageindex) {
+  const result = await axios.get('/getgoods/?pageindex=' + pageindex)
+  return result.data
+}
+// 商品缩略图
+export const getthumbimages = async function (id) {
+  const result = await axios.get('/getthumbimages/' + id)
+  return result.data
+}
+// 获取商品参数区和价格，标题等数据
+export const getgoodsinfo = async function (id) {
+  const result = await axios.get('/getgoodsinfo/' + id)
+  return result.data
+}
+
+export const getshopcarlist = async function (ids) {
+  const result = await axios.get('/getshopcarlist/' + ids)
+  return result.data
+}
